@@ -1,4 +1,4 @@
-# Zero Config API Boilerplate with Laravel Sanctum
+# Zero Config API Boilerplate
 ## Setup instructions
 ### Clone repository
 ```bash
