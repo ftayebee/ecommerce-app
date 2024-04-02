@@ -2,8 +2,8 @@
 ## Setup instructions
 ### Clone repository
 ```bash
-git clone git@github.com:sayedulsayem/laravel-auth-sanctum.git
-cd laravel-auth-sanctum
+git clone https://github.com/ftayebee/ecommerce-app
+cd ecommerce-app
 ```
 ### Install dependency
 ```bash
