@@ -17,7 +17,7 @@ cp .env.example .env
 - Create a database in your mysql. e.g. ecommerce-app
 - Place database credentials in you `.env` file
 ```env
-DB_DATABASE=laravel-auth-sanctum
+DB_DATABASE=ecommerce-app
 DB_USERNAME=<DATABASE-USER> #this is database user name
 DB_PASSWORD=<DATABASE-PASSWORD> #this is database password
 ```
