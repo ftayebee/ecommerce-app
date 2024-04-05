@@ -64,11 +64,10 @@ const ApiController = reactive({
             });
     },
 
-    register(username, email, password) {
-        alert('Registering...')
-        ApiController.fetchPublicApi('/api/register', { name: username, email, password }, 'POST')
+    register(username, email, password, confirmPassword) {
+        ApiController.fetchPublicApi('/api/register', { name: username, email, password, confirmPassword }, 'POST')
             .then(res => {
-                if (res.error == 0) {
+                if (res.status == 201) {
                     ApiController.authenticate(email, password)
                 }
             });

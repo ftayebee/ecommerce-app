@@ -15,7 +15,7 @@ onMounted(() => {
 const inventories = ref([]);
 
 onBeforeMount(() => {
-    const res = auth.fetchProtectedApi("/api/auth/inventories", {}, "GET");
+    const res = auth.fetchProtectedApi("/api/auth/inventories", { isAdmin: auth.user.role == 'user' }, "GET");
     res.then((data) => {
         inventories.value = data.inventories;
     });
@@ -24,14 +24,8 @@ onBeforeMount(() => {
 
 <template>
     <div class="p-4 sm:ml-64">
-        <h1 class="text-2xl font-semibold text-gray-800 dark:text-white">All Inventories ({{inventories.length}})</h1>
-        
-        <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 mb-10">
-            <Alert message="No Inventories Found." type="info" v-if="inventories.length == 0" />
-            <InventoryCard v-for="item in inventories" :key="item.id" :inventory="item" v-if="inventories.length !== 0" />
-        </div>
+        <router-view></router-view>
     </div>
-    
 </template>
 
 <style scoped>

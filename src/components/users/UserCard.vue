@@ -15,7 +15,11 @@
         
         <div class="flex flex-col justify-center ml-4">
             <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{{ props.user.name }}</h5>
-            <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 text-center w-auto">{{ props.user.role.toString().toUpperCase() }}</span>
+            <p class="mb-1 text-md font-medium text-gray-900 dark:text-white">
+                {{ props.user.inventory.length }} Inventories
+            </p>
+            
+            <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 text-center">{{ props.user.role.toString().toUpperCase() }}</span>
         </div>
     </router-link>
 </template>

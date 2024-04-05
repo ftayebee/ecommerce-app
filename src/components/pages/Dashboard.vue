@@ -2,8 +2,8 @@
 import { useRoute } from 'vue-router'
 import { initFlowbite } from 'flowbite'
 import { onMounted, ref } from 'vue'
-import UserList from '../pages/UserList.vue'
-import InventoryList from '../pages/InventoryList.vue'
+import UserList from './../users/UserList.vue'
+import Inventory from './../pages/Inventory.vue'
 
 onMounted(() => {
     initFlowbite();
@@ -11,11 +11,10 @@ onMounted(() => {
 </script>
 
 <template>
-    <UserList />
-
-    <InventoryList />
-
-    <h1 class="text-2xl font-semibold text-gray-800 dark:text-white">All Products (999)</h1>
+    <div class="p-4 sm:ml-64">
+        <UserList />
+        <Inventory />
+    </div>
 </template>
 
 <style scoped>
