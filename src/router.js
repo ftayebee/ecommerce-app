@@ -7,6 +7,7 @@ import Dashboard from "./components/pages/Dashboard.vue";
 import Inventory from "./components/pages/Inventory.vue";
 import InventoryList from './components/inventories/InventoryList.vue';
 import AddInventory from './components/inventories/AddInventory.vue'
+import SingleInventory from './components/inventories/SingleInventory.vue'
 import UpdateInventory from './components/inventories/UpdateInventory.vue'
 
 import Users from "./components/pages/Users.vue";
@@ -86,8 +87,8 @@ const routes = [
                         component: AddInventory,
                     },
                     {
-                        path: ":id",
-                        component: UserDetail,
+                        path: "view/:id",
+                        component: SingleInventory,
                     },
                     {
                         path: ":id/edit",

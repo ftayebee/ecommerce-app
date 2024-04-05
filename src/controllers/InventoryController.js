@@ -7,7 +7,8 @@ const inventoryController = reactive({
     
     async getAllInventories(endPoint, data) {
         const res = await ApiController.fetchProtectedApi(endPoint, data ,"GET")
-        this.inventories = res.inventories
+        this.inventories = res.getAllInventories
+        return res.inventories
     },
 
     async saveInventory(data = {}, endPoint = "") {

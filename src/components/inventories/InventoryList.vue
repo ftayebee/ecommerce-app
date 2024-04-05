@@ -16,8 +16,11 @@ onMounted(() => {
 const inventories = ref([]);
 
 onBeforeMount(() => {
-    inventoryController.getAllInventories("/api/auth/inventories", { isAdmin: auth.user.role == 'user' })
-    console.log(inventoryController.inventories);
+    // const endpoint = auth.user.role == 'user' ? 
+    const res = auth.fetchProtectedApi("/api/auth/inventories", { isAdmin: auth.user.role == 'user' }, "GET");
+    res.then((data) => {
+        inventories.value = data.inventories;
+    });
 });
 </script>
 
@@ -32,7 +35,7 @@ onBeforeMount(() => {
     
     <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 mb-10">
         <Alert message="No Inventories Found." type="info" v-if="inventories.length == 0" />
-        <InventoryCard v-for="item in inventoryController.inventories" :key="item.id" :inventory="item" v-if="inventories.length !== 0" />
+        <InventoryCard v-for="item in inventories" :key="item.id" :inventory="item" v-if="inventories.length !== 0" />
     </div>    
 </template>
 
